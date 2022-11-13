@@ -1,0 +1,174 @@
+.h_c{
+    background-color: rgb(255, 255, 255);
+  }
+
+  .ull {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(166, 206, 233);
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: rgb(42, 78, 102);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  li a.active{
+      background-color: rgb(60, 131, 172);
+      color: #f1f1f1;
+  }
+  
+  li a:hover {
+    background-color: rgb(88, 97, 97);
+    color: #f1f1f1;
+  }
+
+  .c_name {
+    font-size: 35px;
+    color: rgb(21, 105, 179);
+    font-style: italic;
+    font-weight: bold;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.content{
+    /* margin-left: 150px; */
+    padding: 1px 16px;
+    height: 1000px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+
+  .items{
+    background-color: #779fc5;
+    color: #12325c;
+    border-radius: 10px;
+    box-shadow: 5px #6d6d6d;
+    float: left;
+    width: 250px;
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+  
+  }
+
+  .atc{
+    background-color: #2d4861;
+    color: #f1f1f1;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    border-radius: 10px;
+    font-size: 100%;
+  }
+
+
+  .cart{
+      border: 5px solid black;
+      float: right;
+      font-size: 15px;
+      background-color: #f1f1f1;
+  }
+
+
+  .login {
+    margin: auto;
+    width: fit-content;
+    margin-top: 10%;
+    border: 10px solid rgb(55, 134, 209);
+    padding: 10px;
+    background-color: rgb(250, 255, 240);
+    color: rgb(51, 32, 32);
+    text-align: center;
+    border-radius: 10mm;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-shadow: 10px 20px #2e81c5;
+}
+
+.loginbtn {
+    background-color: #0045a0;
+    color: rgb(255, 255, 255);
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    opacity: 0.9;
+    border-radius: 10px;
+    font-size: 100%;
+}
+
+.loginbtn:hover {
+    background-color: #79adf1;
+}
+
+
+
+input {
+    border: 2px solid rgb(56, 93, 214);
+    border-radius: 4px;
+}
+
+
+.link {
+    color: #0045a0;
+    font-size: 10px;
+}
+
+a.logout {
+    background-color: #2663b4;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    margin-right: 5%;
+}
+
+
+.registration{
+    margin: auto;
+  width: fit-content;
+  margin-top: 10%;
+  border: 10px solid rgb(55, 134, 209);
+  padding: 10px;
+  background-color: rgb(250, 255, 240);
+  color: rgb(51, 32, 32);
+  text-align: center;
+  border-radius: 10mm;
+  font-family:sans-serif;
+  box-shadow: 10px 20px #2e81c5;
+}
+
+.registration_btn{
+    background-color: #1173f3;
+  color: rgb(255, 255, 255);
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  opacity: 0.9;
+  border-radius: 10;
+}
+
+.registration_btn:hover {
+    background-color: #79adf1;
+  }
+
+  
+  .payment{
+    background-color: #aed8fa;
+    color: #12325c;
+    border: 5p solid rgb(168, 168, 248);
+  }
+  

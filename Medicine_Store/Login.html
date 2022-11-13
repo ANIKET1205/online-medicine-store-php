@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Page</title>
+    <link rel="Stylesheet" type="text/CSS" href="h_page.css">
+    <script>
+        function validate_Login() {
+            var name = document.Login.uid.value;
+            var pass = document.Login.pass.value;
+            if (name == "") {
+                // alert("Please Enter User Name ... ");
+                // document.Login.uname.focus();
+                // return false;
+                document.getElementById("uname").innerHTML = "Please Enter Username";
+            }
+            if (pass == "") {
+                alert("Please Enter User Name ... ");
+                document.Login.password.focus();
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body style="color: rgb(168, 51, 15);">
+    <header class="h_c">
+        <div>
+            <p class="c_name">MARUTI Online Medicine Store</p>
+        </div>
+        <!-- <div class="sidebar"> -->
+        <ul class="ull">
+            
+            <li><a href="index.php">Home</a></li>
+            <li><a class="active" href="Login.html">Login</a></li>
+            <li><a href="RecordDB.php">Registration</a></li>
+            <!-- <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#about">About Us</a></li> -->
+
+        </ul>
+        <!-- </div> -->
+        
+    </header>
+    <div class="login">
+    <form name="Login" id="Form" method="post" action="login_data.php" onsubmit="validate_Login()">
+        <p style="font-size: 25px; color: rgb(128, 26, 97);"><b>Login Page</b></p>
+        <table>
+            <tr>
+                <td><label for="utype">User Type :</label></td>
+                <td><select id="utype" name="utype">
+                    <option value="Customer" id="customer">Customer</option>
+                    <option value="Admin" id="admin">Admin</option>
+                  </select></td>
+            </tr>
+            <tr>
+                <td><label for="uid">User ID :</label></td>
+                <td><input type="text" name="uid" id="uid" placeholder="Enter User ID" ></td>
+            </tr>
+            <tr>
+                <td><label for="pasasword">Password : </label></td>
+                <td><input type="password" name="pass" id="pass" placeholder="Enter Password" required></td>
+            </tr>
+            
+
+        </table>
+        <input type="submit" value="submit" name="login" class="loginbtn" ><br>
+        <a href="RecordDB.php" class="link">Exist new user Click here for Sing up </a><br>
+        <a href="Forgot_pass.php" class="link">Forgot Password </a>
+    </form>
+</div>
+</body>
+
+</html>

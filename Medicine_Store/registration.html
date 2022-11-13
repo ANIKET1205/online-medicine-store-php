@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registration Form</title>
+    <link rel="Stylesheet" type="text/CSS" href="Registration.css">
+    <script>
+        function validate() {
+            var fname = document.Register.fname.value;
+            var lname = document.Register.lname.value;
+            var age = document.Register.age.value;
+            var eid = document.Register.eid.value;
+            var dob = document.Register.dob.value;
+            var gender = document.Register.gen.value;
+            var mnum = document.Register.mnum.value;
+            var add = document.Register.add.value;
+            var pass = document.Register.pass.value;
+        
+
+            //Conditions for FIRST NAME : 
+            if (fname == "") {
+                alert("Please Enter FIRST NAME ... ");
+                document.Register.fname.focus();
+                return false;
+            }
+            if (!fname.match(/^[a-zA-Z]+$/)) {
+                alert("Please Enter valid in FIRST NAME.(Use only Alphabates)");
+                document.Register.fname.focus();
+                return false;
+            }
+
+            //Conditions for LAST NAME : 
+            if (lname == "") {
+                alert("Please Enter LAST NAME ... ");
+                document.Register.lname.focus();
+                return false;
+            }
+            if (!lname.match(/^[a-zA-Z]+$/)) {
+                alert("Don't Enter Numbers in LAST NAME.");
+                document.Register.lname.focus();
+                return false;
+            }
+
+            //Conditions for AGE : 
+            if (age == "") {
+                alert("Please Enter Age . ");
+                document.Register.age.focus();
+                return false;
+            }
+            if (isNaN(age)) {
+                alert("Please Enter only numbers in AGE ...");
+                document.Register.age.focus();
+                return false;
+            }
+            if (age > 99) {
+                alert("Please Enter valid age (<100)");
+                document.Register.age.focus();
+                return false;
+            }
+
+            //Conditions for EMAIL ID : 
+            if (eid == "") {
+                alert("Please Enter Email ID ...");
+                document.Register.eid.focus();
+                return false;
+            }
+            var i = eid.indexOf("@")
+            var j = eid.lastIndexOf(".");
+            if (i < 1 || (j - i < 2)) {
+                alert("Please enter correct email ID (Use . and @ symbol)");
+                return false;
+            }
+            if (eid.charAt([i + 1]) != 'g' || eid.charAt([i + 2]) != 'm' || eid.charAt([i + 3]) != 'a' || eid.charAt([i + 4]) != 'i' || eid.charAt([i + 5]) != 'l' || eid.charAt([i + 6]) != '.') {
+                alert("Please enter gmail id ...(Use gmail between @ and .(dot)) ");
+                document.Register.eid.focus();
+                return false;
+            }
+
+            //Conditions for DATE OF BIRTH : .........................................................
+
+            if (dob == "") {
+                alert("Please Enter Date Of Birth ");
+                document.Register.dob.focus();
+                return false;
+            }
+            var b_date = new Date(dob);
+            var c_date = new Date();
+            var y1 = b_date.getFullYear();
+            var y2 = c_date.getFullYear();
+            if (y2 - y1 < 18) {
+                alert("Your age is < 18");
+                document.Register.dob.focus();
+                return false;
+            }
+
+            //Conditions for GENDER : 
+            if (gender == "") {
+                alert("Please Enter GENDER ");
+                return false;
+            }
+
+            //Conditions for MOBILE NUMBER : 
+            if (mnum == "") {
+                alert("Please Enter MOBILE NUMBER ");
+                document.Register.mnum.focus();
+                return false;
+            }
+            if (isNaN(mnum)) {
+                alert("Please Enter only numbers in Mobile Number ...");
+                document.Register.mnum.focus();
+                return false;
+            }
+            if (mnum.length != 10) {
+                alert("Please Enter MOBILE NUMBER OF LENGTH OF 10");
+                document.Register.mnum.focus();
+                return false;
+            }
+            if (mnum.charAt(0) != '9' && mnum.charAt(0) != '8' && mnum.charAt(0) != '7' && mnum.charAt(0) != '6') {
+                alert("Your MOBILE NUMBER should be start with either 9 , 8 , 7 or 6 .");
+                document.Register.mnum.focus();
+                return false;
+            }
+
+            if(pass.length < 6) {  
+                alert("Password length should be > 6");
+                document.Login.password.focus();
+                return false; 
+            } 
+            
+            //Conditions for ADDRESS : 
+            if (add == "") {
+                alert("Please Enter Address ");
+                document.Register.add.focus();
+                return false;
+            }
+
+
+        }
+    </script>
+</head>
+
+<body style="background-image: url('backg.png'); image-rendering: auto; color: rgb(168, 51, 15);">
+
+    <header class="header">
+        <div>
+            <p class="c_name">MARUTI Online Medicine Store</p>
+        </div>
+        
+    </header>
+<div class="registration">
+    <form name="Register" id="Form" method="get" action="RecordDB.php" onsubmit="return validate();">
+        <h1 style="font-size: 50px; color: rgb(22, 4, 73);"><b>REGISTRATION PAGE</b></h1>
+        <table width=100%>
+            <tr>
+                <td><label for="fname">FIRST NAME :</label></td>
+                <td><input type="text" name="fname" id="fname" placeholder="Enter Your First Name"></td>
+            </tr>
+
+            <tr>
+                <td><label for="lname">LAST NAME :</label></td>
+                <td><input type="text" name="lname" id="lname" placeholder="Enter Your Last Name"></td>
+            </tr>
+
+
+            <tr>
+                <td><label for="age">YOUR AGE :</label></td>
+                <td><input type="text" name="age" id="age" placeholder="Enter Your AGE"></td>
+            </tr>
+
+            <tr>
+                <td><label for="eid">EMAIL ID :</label></td>
+                <td><input type="text" name="eid" id="eid" placeholder="abc@gmail.com"></td>
+            </tr>
+
+            <tr>
+                <td><label for="dob">DATE OF BIRTH : </label></td>
+                <td><input type="date" name="dob" id="dob"></td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="gender">GENDER : </label>
+                </td>
+                <td>
+                    <input type="radio" value="male" name="gen" id="male">
+                    <label for="male" >MALE</label><br>
+                    <input type="radio" value="female" name="gen" id="female">
+                    <label for="female">FEMALE</label><br>
+                    <input type="radio" value="other" name="gen" id="other">
+                    <label for="other">other</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="mnum">MOBILE NUMBER :</label></td>
+                <td><input type="BIGINT" name="mnum" id="mnum"></td>
+            </tr>
+            <tr>
+                <td><label for="pass">PASSWORD :</label></td>
+                <td><input type="password" name="pass" id="pass"></td>
+            </tr>
+            <tr>
+                <td><label for="add">ENTER YOUR ADDRESS :</label></td>
+                <td><textarea name="add" id="address" cols="20" rows="5"></textarea></td>
+            </tr>
+        </table>
+        <input type="submit" value="REGISTRATION" name="REGISTRATION" class="registration_btn">
+    </form>
+    
+    </div>
+
+</body>
+
+</html>
